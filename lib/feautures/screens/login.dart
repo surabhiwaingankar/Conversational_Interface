@@ -1,8 +1,15 @@
+
+import 'package:conversational_interface/feautures/screens/home.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,7 +117,9 @@ class LoginScreen extends StatelessWidget {
                   child: IconButton(
                     // style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(const Color.fromARGB(255, 232, 179, 241))),
                     color: Colors.blueAccent,
-                    onPressed: (){},
+                    onPressed: (){
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=>HomePage()));
+                    },
                   icon:const Image(
                     image: AssetImage("assets/google.png"),
                     width: 40,
