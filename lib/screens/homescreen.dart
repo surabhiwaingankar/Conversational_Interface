@@ -1,16 +1,19 @@
+import 'package:conversational_interface/screens/wishlistscreen.dart';
 import 'package:flutter/material.dart';
-import 'package:conversational_interface/presentation/resources/color_manager.dart';
 import 'package:conversational_interface/presentation/resources/font_manager.dart';
+import 'package:conversational_interface/presentation/resources/color_manager.dart';
 
-class WishlistScreen extends StatefulWidget {
-  const WishlistScreen({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<WishlistScreen> createState() => _WishlistScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _WishlistScreenState extends State<WishlistScreen> {
-  int _currentIndex = 1;
+class _HomeScreenState extends State<HomeScreen> {
+  int _currentIndex = 0;
+
+  List<Widget> screens = const [HomeScreen(), WishlistScreen()];
   @override
   Widget build(BuildContext context) {
     return const Column(
@@ -46,11 +49,11 @@ class _WishlistScreenState extends State<WishlistScreen> {
                   Icons.mic_none,
                   color: Colors.grey,
                 ),
-              )
+              ),
             ],
           ),
         ),
-        Text('Wishlist'),
+        Text('Home')
       ],
     );
   }
