@@ -14,11 +14,61 @@ class _WishlistScreenState extends State<WishlistScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          children: const [
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  CircleAvatar(
+                    radius: 40,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'Joseph Reeds',
+                    style: TextStyle(
+                        fontFamily: FontConstants.fontFamily,
+                        fontSize: FontSize.s16),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'josephreeds32@gmail.com',
+                    style: TextStyle(fontFamily: FontConstants.fontFamily),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 2.0, horizontal: 8),
+              child: ListTile(
+                leading: Icon(Icons.settings_outlined),
+                title: Text('Settings'),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 2.0, horizontal: 8),
+              child: ListTile(
+                leading: Icon(Icons.logout_outlined),
+                title: Text('Logout'),
+              ),
+            ),
+          ],
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: (int newindex) {
           _currentIndex = newindex;
           setState(() {});
         },
+        selectedLabelStyle:
+            const TextStyle(fontFamily: FontConstants.fontFamily),
+        unselectedLabelStyle:
+            const TextStyle(fontFamily: FontConstants.fontFamily),
         selectedFontSize: 14,
         unselectedFontSize: 14,
         currentIndex: _currentIndex,
@@ -50,7 +100,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
       ),
       backgroundColor: const Color.fromRGBO(253, 253, 253, 1),
       appBar: AppBar(
-        leading: const Icon(Icons.list),
+        //leading: const Drawer(),
         title:
             //Text('Stylish'),
             Container(
