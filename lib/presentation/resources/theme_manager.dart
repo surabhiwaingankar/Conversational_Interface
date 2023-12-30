@@ -1,7 +1,7 @@
 
-import 'package:conversational_interface/presentation/color_manager.dart';
-import 'package:conversational_interface/presentation/style_manager.dart';
-import 'package:conversational_interface/presentation/values_manager.dart';
+import 'package:conversational_interface/presentation/resources/color_manager.dart';
+import 'package:conversational_interface/presentation/resources/style_manager.dart';
+import 'package:conversational_interface/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
 
 ThemeData getApplicationTheme(){
