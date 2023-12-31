@@ -1,4 +1,5 @@
-import 'package:conversational_interface/app/app.dart';
+
+import 'package:conversational_interface/presentation/resources/theme_manager.dart';
 import 'package:conversational_interface/screens/homescreen.dart';
 import 'package:conversational_interface/screens/wishlistscreen.dart';
 import 'package:conversational_interface/presentation/resources/font_manager.dart';
@@ -23,7 +24,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(useMaterial3: true),
+      theme: getApplicationTheme(),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         floatingActionButton: FloatingActionButton(
