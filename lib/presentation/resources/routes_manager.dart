@@ -1,5 +1,6 @@
 import 'package:conversational_interface/presentation/resources/strings_manager.dart';
 import 'package:conversational_interface/screens/homescreen.dart';
+import 'package:conversational_interface/screens/onboarding.dart';
 import 'package:conversational_interface/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,8 @@ class RouteGenerator{
     switch(routeSettings.name){
       case Routes.splashRoute:
         return MaterialPageRoute(builder: (_)=>SplashScreen());
-    
+      case Routes.onBoardingRoute:
+        return MaterialPageRoute(builder: (_)=>OnBoardingScreen());
    
  
       case Routes.mainRoute:

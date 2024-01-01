@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:conversational_interface/presentation/resources/color_manager.dart';
 import 'package:conversational_interface/presentation/resources/routes_manager.dart';
 import 'package:conversational_interface/presentation/resources/strings_manager.dart';
 import 'package:conversational_interface/screens/homescreen.dart';
@@ -22,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
     _timer=Timer(Duration(seconds:3),_goNext);
   }
   _goNext(){
-    Navigator.pushReplacementNamed(context, Routes.mainRoute);
+    Navigator.pushReplacementNamed(context, Routes.onBoardingRoute);
   }
   @override
   void initState() {
@@ -43,14 +44,15 @@ class _SplashScreenState extends State<SplashScreen> {
       child :Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-           Image.asset('assets/images/logo.png',height: 120,width: 120,),
-      // Text(
-      //   AppStrings.appName,
-      //   style: TextStyle(
-      //     fontFamily: FontConstants.fontFamily,
-      //     fontSize: FontSize.s20,
-      //     fontWeight: FontWeight.bold,),
-      // ),
+           Image.asset('assets/images/splash_logo.png'),
+      Text(
+        AppStrings.appName,
+        style: TextStyle(
+          fontFamily: FontConstants.fontFamily,
+          fontSize: FontSize.s30,
+          color: ColorManager.primary,
+          fontWeight: FontWeight.bold,),
+      ),
         ],
       )
       ),
