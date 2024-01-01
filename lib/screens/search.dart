@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Search extends StatelessWidget {
-  const Search({super.key});
+class SearchScreen extends StatelessWidget {
+  const SearchScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Search'),
+    return const Scaffold(
+      body: Center(
+        child: Text('Search Screen'),
+      ),
     );
   }
 }

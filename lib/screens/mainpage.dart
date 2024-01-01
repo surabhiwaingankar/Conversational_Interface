@@ -21,7 +21,7 @@ class _MainPageState extends State<MainPage> {
     HomeScreen(),
     WishlistScreen(),
     Cart(),
-    Search(),
+    SearchScreen(),
     Settings(),
   ];
   @override
