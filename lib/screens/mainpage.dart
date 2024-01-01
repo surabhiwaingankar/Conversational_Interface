@@ -29,6 +29,8 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       body: screens[_currentIndex],
       appBar: AppBar(
+        elevation: 0,
+        backgroundColor: const Color.fromRGBO(253, 253, 253, 1),
         //leading: const Drawer(),
         title:
             //Text('Stylish'),
@@ -54,10 +56,10 @@ class _MainPageState extends State<MainPage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: (int newindex) {
-          _currentIndex = newindex;
           setState(() {});
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => screens[_currentIndex]));
+          _currentIndex = newindex;
+          // Navigator.push(context,
+          //     MaterialPageRoute(builder: (context) => screens[_currentIndex]));
         },
         type: BottomNavigationBarType.fixed,
         selectedLabelStyle:
@@ -93,63 +95,61 @@ class _MainPageState extends State<MainPage> {
           ),
         ],
       ),
-      //   floatingActionButton: FloatingActionButton(
-      //     shape:
-      //         RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
-      //     onPressed: () {},
-      //     child: Image.asset(
-      //       'assets/images/chatbot.png',
-      //       scale: 0.8,
-      //     ),
-      //   ),
-      //   drawer: Drawer(
-      //     child: ListView(
-      //       children: const [
-      //         Padding(
-      //           padding: EdgeInsets.all(8.0),
-      //           child: Column(
-      //             children: [
-      //               CircleAvatar(
-      //                 radius: 40,
-      //               ),
-      //               SizedBox(
-      //                 height: 10,
-      //               ),
-      //               Text(
-      //                 'Joseph Reeds',
-      //                 style: TextStyle(
-      //                     fontFamily: FontConstants.fontFamily,
-      //                     fontSize: FontSize.s16),
-      //               ),
-      //               SizedBox(
-      //                 height: 10,
-      //               ),
-      //               Text(
-      //                 'josephreeds32@gmail.com',
-      //                 style: TextStyle(fontFamily: FontConstants.fontFamily),
-      //               ),
-      //             ],
-      //           ),
-      //         ),
-      //         Padding(
-      //           padding: EdgeInsets.symmetric(vertical: 2.0, horizontal: 8),
-      //           child: ListTile(
-      //             leading: Icon(Icons.settings_outlined),
-      //             title: Text('Settings'),
-      //           ),
-      //         ),
-      //         Padding(
-      //           padding: EdgeInsets.symmetric(vertical: 2.0, horizontal: 8),
-      //           child: ListTile(
-      //             leading: Icon(Icons.logout_outlined),
-      //             title: Text('Logout'),
-      //           ),
-      //         ),
-      //       ],
-      //     ),
-      //   ),
-
-      //   backgroundColor: const Color.fromRGBO(253, 253, 253, 1),
+      floatingActionButton: FloatingActionButton(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+        onPressed: () {},
+        child: Image.asset(
+          'assets/images/chatbot.png',
+          scale: 0.8,
+        ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: const [
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  CircleAvatar(
+                    radius: 40,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'Joseph Reeds',
+                    style: TextStyle(
+                        fontFamily: FontConstants.fontFamily,
+                        fontSize: FontSize.s16),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'josephreeds32@gmail.com',
+                    style: TextStyle(fontFamily: FontConstants.fontFamily),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 2.0, horizontal: 8),
+              child: ListTile(
+                leading: Icon(Icons.settings_outlined),
+                title: Text('Settings'),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 2.0, horizontal: 8),
+              child: ListTile(
+                leading: Icon(Icons.logout_outlined),
+                title: Text('Logout'),
+              ),
+            ),
+          ],
+        ),
+      ),
+      backgroundColor: Color.fromARGB(255, 251, 251, 251),
     );
   }
 }

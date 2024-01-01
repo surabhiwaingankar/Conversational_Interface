@@ -11,8 +11,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _currentIndex = 0;
-
   List<Widget> screens = const [HomeScreen(), WishlistScreen()];
   @override
   Widget build(BuildContext context) {
