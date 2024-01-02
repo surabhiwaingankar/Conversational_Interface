@@ -84,6 +84,22 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                               ),
                      ),
                    ),
+
+                    Positioned(
+                      bottom: 20,
+                      right: 10,
+                      child: index==2?Container(
+                        height: 50,
+                        width: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25),
+                          color: ColorManager.primary,
+                        ),
+                        child: IconButton(onPressed: (){
+                          Navigator.pushReplacementNamed(context, Routes.mainRoute);
+                        }, icon: const Icon(Icons.arrow_forward_ios,color: Colors.white,),),
+                      ):Container(),
+                    )
                  ],
                ),
              )
