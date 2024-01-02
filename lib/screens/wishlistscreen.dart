@@ -3,6 +3,7 @@ import 'package:conversational_interface/presentation/resources/color_manager.da
 import 'package:conversational_interface/presentation/resources/font_manager.dart';
 import 'package:conversational_interface/presentation/resources/style_manager.dart';
 import 'package:conversational_interface/presentation/resources/values_manager.dart';
+import 'package:conversational_interface/custom/customwidgets.dart';
 
 class WishlistScreen extends StatefulWidget {
   const WishlistScreen({super.key});
@@ -20,6 +21,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
   final productDescription = "Product Description";
   final productPrice = 499;
   final noOfRatings = 3000;
+  final double rating = 3.5;
   //int _currentIndex = 1;
   @override
   Widget build(BuildContext context) {
@@ -109,184 +111,64 @@ class _WishlistScreenState extends State<WishlistScreen> {
             runSpacing: 16,
             direction: Axis.horizontal,
             children: [
-              WishlistItemCard(
+              ProductItemCard(
                 productThumbnail: productThumbnail,
                 productCategory: productCategory,
                 productDescription: productDescription,
                 productTitle: productTitle,
                 productPrice: productPrice,
+                rating: rating,
                 noOfRatings: noOfRatings,
               ),
-              WishlistItemCard(
+              ProductItemCard(
                 productThumbnail: productThumbnail,
                 productCategory: productCategory,
                 productDescription: productDescription,
                 productTitle: productTitle,
                 productPrice: productPrice,
+                rating: rating,
                 noOfRatings: noOfRatings,
               ),
-              WishlistItemCard(
+              ProductItemCard(
                 productThumbnail: productThumbnail,
                 productCategory: productCategory,
                 productDescription: productDescription,
                 productTitle: productTitle,
                 productPrice: productPrice,
+                rating: rating,
                 noOfRatings: noOfRatings,
               ),
-              WishlistItemCard(
+              ProductItemCard(
                 productThumbnail: productThumbnail,
                 productCategory: productCategory,
                 productDescription: productDescription,
                 productTitle: productTitle,
                 productPrice: productPrice,
+                rating: rating,
                 noOfRatings: noOfRatings,
               ),
-              WishlistItemCard(
+              ProductItemCard(
                 productThumbnail: productThumbnail,
                 productCategory: productCategory,
                 productDescription: productDescription,
                 productTitle: productTitle,
                 productPrice: productPrice,
+                rating: rating,
                 noOfRatings: noOfRatings,
               ),
-              WishlistItemCard(
+              ProductItemCard(
                 productThumbnail: productThumbnail,
                 productCategory: productCategory,
                 productDescription: productDescription,
                 productTitle: productTitle,
                 productPrice: productPrice,
+                rating: rating,
                 noOfRatings: noOfRatings,
               ),
             ],
           )
         ],
       ),
-    );
-  }
-}
-
-class WishlistItemCard extends StatelessWidget {
-  final String productThumbnail;
-  final String productTitle;
-  final String productCategory;
-  final String productDescription;
-  final int productPrice;
-  final int noOfRatings;
-  const WishlistItemCard(
-      {super.key,
-      required this.productThumbnail,
-      required this.productTitle,
-      required this.productCategory,
-      required this.productDescription,
-      required this.productPrice,
-      required this.noOfRatings});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: 180,
-      child: Card(
-        surfaceTintColor: ColorManager.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              child: Image(image: NetworkImage(productThumbnail)),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(AppPadding.p8),
-              child: Text(
-                productTitle,
-                style: getSemiBoldStyle(
-                    color: Colors.black, fontSize: FontSize.s16),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
-              child: Text(
-                productCategory,
-                style: getRegularStyle(
-                    color: Colors.black, fontSize: FontSize.s12),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: AppPadding.p8, vertical: 3),
-              child: Text(
-                productDescription,
-                style: getRegularStyle(
-                    color: Colors.black, fontSize: FontSize.s12),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: AppPadding.p8, vertical: 3),
-              child: Text(
-                "₹$productPrice",
-                style: getSemiBoldStyle(
-                    color: Colors.black, fontSize: FontSize.s14),
-              ),
-            ),
-            Row(
-              children: [
-                const Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: AppPadding.p8, vertical: 5),
-                  child: RatingStars(),
-                ),
-                Text(
-                  '$noOfRatings',
-                  style: getLightStyle(
-                      color: Colors.black, fontSize: FontSize.s12),
-                )
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class RatingStars extends StatelessWidget {
-  const RatingStars({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return const Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Icon(
-          Icons.star_rate,
-          size: 13.33,
-          color: Color.fromRGBO(255, 149, 41, 1),
-        ),
-        Icon(
-          Icons.star_rate,
-          size: 13.33,
-          color: Color.fromRGBO(255, 149, 41, 1),
-        ),
-        Icon(
-          Icons.star_rate,
-          size: 13.33,
-          color: Color.fromRGBO(255, 149, 41, 1),
-        ),
-        Icon(
-          Icons.star_rate,
-          size: 13.33,
-          color: Color.fromRGBO(255, 149, 41, 1),
-        ),
-        Icon(
-          Icons.star_half_outlined,
-          size: 13.33,
-          color: Color.fromRGBO(255, 149, 41, 1),
-        ),
-      ],
     );
   }
 }
