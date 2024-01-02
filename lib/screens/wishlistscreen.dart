@@ -66,45 +66,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(
                 horizontal: AppPadding.p16, vertical: 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('$wishlistItemsno Items',
-                    style: getBoldStyle(
-                        color: Colors.black, fontSize: FontSize.s18)),
-                Row(
-                  children: [
-                    Chip(
-                      backgroundColor: ColorManager.white,
-                      shadowColor: ColorManager.grey,
-                      elevation: 2,
-                      side: BorderSide.none,
-                      avatar: const Icon(Icons.swap_vert),
-                      label: Text(
-                        'Sort',
-                        style: getRegularStyle(
-                            color: Colors.black, fontSize: FontSize.s14),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 8,
-                    ),
-                    Chip(
-                      backgroundColor: ColorManager.white,
-                      shadowColor: ColorManager.grey,
-                      elevation: 2,
-                      side: BorderSide.none,
-                      avatar: const Icon(Icons.filter_alt_outlined),
-                      label: Text(
-                        'Filter',
-                        style: getRegularStyle(
-                            color: Colors.black, fontSize: FontSize.s14),
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            ),
+            child: ItemsandSortFilter(itemsno: wishlistItemsno),
           ),
           Wrap(
             spacing: 16,

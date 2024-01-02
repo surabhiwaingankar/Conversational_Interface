@@ -30,7 +30,7 @@ class _MainPageState extends State<MainPage> {
       body: screens[_currentIndex],
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: const Color.fromRGBO(253, 253, 253, 1),
+        backgroundColor: ColorManager.offwhite,
         //leading: const Drawer(),
         title:
             //Text('Stylish'),
@@ -59,7 +59,7 @@ class _MainPageState extends State<MainPage> {
           setState(() {
             _currentIndex = newindex;
           });
-          
+
           // Navigator.push(context,
           //     MaterialPageRoute(builder: (context) => screens[_currentIndex]));
         },
@@ -151,7 +151,7 @@ class _MainPageState extends State<MainPage> {
           ],
         ),
       ),
-      backgroundColor: Color.fromARGB(255, 251, 251, 251),
+      backgroundColor: ColorManager.offwhite,
     );
   }
 }
