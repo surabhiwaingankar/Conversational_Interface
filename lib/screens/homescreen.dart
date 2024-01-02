@@ -11,12 +11,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _currentIndex = 0;
+  // int _currentIndex = 0;
 
-  List<Widget> screens = const [HomeScreen(), WishlistScreen()];
+  // List<Widget> screens = const [HomeScreen(), WishlistScreen()];
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return const Scaffold(
+       body :Column(
       children: [
         Padding(
           padding: EdgeInsets.all(16.0),
@@ -55,6 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         Text('Home')
       ],
+       ),
     );
   }
 }

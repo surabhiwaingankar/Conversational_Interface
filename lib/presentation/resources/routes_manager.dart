@@ -1,5 +1,6 @@
 import 'package:conversational_interface/presentation/resources/strings_manager.dart';
 import 'package:conversational_interface/screens/homescreen.dart';
+import 'package:conversational_interface/screens/mainpage.dart';
 import 'package:conversational_interface/screens/onboarding.dart';
 import 'package:conversational_interface/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,7 @@ class RouteGenerator{
    
  
       case Routes.mainRoute:
-        return MaterialPageRoute(builder: (_)=>HomeScreen());
+        return MaterialPageRoute(builder: (_)=>MainPage());
       default:
         return UndefinedRoute();
     }

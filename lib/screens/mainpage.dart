@@ -54,10 +54,12 @@ class _MainPageState extends State<MainPage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: (int newindex) {
-          _currentIndex = newindex;
-          setState(() {});
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => screens[_currentIndex]));
+          setState(() {
+            _currentIndex = newindex;
+          });
+          
+          // Navigator.push(context,
+          //     MaterialPageRoute(builder: (context) => screens[_currentIndex]));
         },
         type: BottomNavigationBarType.fixed,
         selectedLabelStyle:
