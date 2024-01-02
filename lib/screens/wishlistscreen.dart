@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:conversational_interface/presentation/resources/color_manager.dart';
 import 'package:conversational_interface/presentation/resources/font_manager.dart';
+import 'package:conversational_interface/presentation/resources/style_manager.dart';
+import 'package:conversational_interface/presentation/resources/values_manager.dart';
 
 class WishlistScreen extends StatefulWidget {
   const WishlistScreen({super.key});
@@ -18,14 +20,14 @@ class _WishlistScreenState extends State<WishlistScreen> {
   final productDescription = "Product Description";
   final productPrice = 499;
   final noOfRatings = 3000;
-  int _currentIndex = 1;
+  //int _currentIndex = 1;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         children: [
           const Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(AppPadding.p16),
             child: SearchBar(
               hintText: 'Search Any Product...',
               hintStyle: MaterialStatePropertyAll(
@@ -50,7 +52,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
               elevation: MaterialStatePropertyAll(1),
               trailing: [
                 Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(AppPadding.p8),
                   child: Icon(
                     Icons.mic_none,
                     color: Colors.grey,
@@ -60,18 +62,14 @@ class _WishlistScreenState extends State<WishlistScreen> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
+            padding: const EdgeInsets.symmetric(
+                horizontal: AppPadding.p16, vertical: 0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  '$wishlistItemsno Items',
-                  style: const TextStyle(
-                    fontFamily: FontConstants.fontFamily,
-                    fontSize: FontSize.s18,
-                    fontWeight: FontWeightManager.bold,
-                  ),
-                ),
+                Text('$wishlistItemsno Items',
+                    style: getBoldStyle(
+                        color: Colors.black, fontSize: FontSize.s18)),
                 Row(
                   children: [
                     Chip(
@@ -80,9 +78,10 @@ class _WishlistScreenState extends State<WishlistScreen> {
                       elevation: 2,
                       side: BorderSide.none,
                       avatar: const Icon(Icons.swap_vert),
-                      label: const Text(
+                      label: Text(
                         'Sort',
-                        style: TextStyle(fontFamily: FontConstants.fontFamily),
+                        style: getRegularStyle(
+                            color: Colors.black, fontSize: FontSize.s14),
                       ),
                     ),
                     const SizedBox(
@@ -94,9 +93,10 @@ class _WishlistScreenState extends State<WishlistScreen> {
                       elevation: 2,
                       side: BorderSide.none,
                       avatar: const Icon(Icons.filter_alt_outlined),
-                      label: const Text(
+                      label: Text(
                         'Filter',
-                        style: TextStyle(fontFamily: FontConstants.fontFamily),
+                        style: getRegularStyle(
+                            color: Colors.black, fontSize: FontSize.s14),
                       ),
                     ),
                   ],
@@ -188,7 +188,6 @@ class WishlistItemCard extends StatelessWidget {
       child: Card(
         surfaceTintColor: ColorManager.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-        elevation: 1,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -197,57 +196,50 @@ class WishlistItemCard extends StatelessWidget {
               child: Image(image: NetworkImage(productThumbnail)),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(AppPadding.p8),
               child: Text(
                 productTitle,
-                style: const TextStyle(
-                    fontFamily: FontConstants.fontFamily,
-                    fontSize: FontSize.s16,
-                    fontWeight: FontWeightManager.semiBold),
+                style: getSemiBoldStyle(
+                    color: Colors.black, fontSize: FontSize.s16),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
               child: Text(
                 productCategory,
-                style: const TextStyle(
-                    fontFamily: FontConstants.fontFamily,
-                    fontSize: FontSize.s12,
-                    fontWeight: FontWeightManager.regular),
+                style: getRegularStyle(
+                    color: Colors.black, fontSize: FontSize.s12),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 3),
+              padding: const EdgeInsets.symmetric(
+                  horizontal: AppPadding.p8, vertical: 3),
               child: Text(
                 productDescription,
-                style: const TextStyle(
-                    fontFamily: FontConstants.fontFamily,
-                    fontSize: FontSize.s12,
-                    fontWeight: FontWeightManager.regular),
+                style: getRegularStyle(
+                    color: Colors.black, fontSize: FontSize.s12),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 3),
+              padding: const EdgeInsets.symmetric(
+                  horizontal: AppPadding.p8, vertical: 3),
               child: Text(
                 "₹$productPrice",
-                style: const TextStyle(
-                    fontFamily: FontConstants.fontFamily,
-                    fontSize: FontSize.s14,
-                    fontWeight: FontWeightManager.semiBold),
+                style: getSemiBoldStyle(
+                    color: Colors.black, fontSize: FontSize.s14),
               ),
             ),
             Row(
               children: [
                 const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 5),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: AppPadding.p8, vertical: 5),
                   child: RatingStars(),
                 ),
                 Text(
                   '$noOfRatings',
-                  style: const TextStyle(
-                      fontFamily: FontConstants.fontFamily,
-                      fontSize: FontSize.s12,
-                      fontWeight: FontWeightManager.light),
+                  style: getLightStyle(
+                      color: Colors.black, fontSize: FontSize.s12),
                 )
               ],
             ),
