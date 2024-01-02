@@ -1,5 +1,6 @@
 import 'package:conversational_interface/presentation/resources/strings_manager.dart';
 import 'package:conversational_interface/screens/homescreen.dart';
+import 'package:conversational_interface/screens/login.dart';
 import 'package:conversational_interface/screens/mainpage.dart';
 import 'package:conversational_interface/screens/onboarding.dart';
 import 'package:conversational_interface/screens/splash_screen.dart';
@@ -9,6 +10,8 @@ class Routes {
   static const String splashRoute = '/';
   static const String onBoardingRoute = '/onboarding';
   static const String mainRoute = '/main';
+  static const String homeRoute = '/home';
+  static const String loginRoute = '/login';
 }
 
 class RouteGenerator {
@@ -20,6 +23,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => OnBoardingScreen());
       case Routes.mainRoute:
         return MaterialPageRoute(builder: (_) => MainPage());
+      // case Routes.homeRoute:
+      //   return MaterialPageRoute(builder: (_) => HomeScreen());
+      case Routes.loginRoute:
+        return MaterialPageRoute(builder: (_) => LoginScreen());
       default:
         return UndefinedRoute();
     }

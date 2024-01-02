@@ -77,7 +77,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                     height: 10,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(8),
-                                      color: index==indexDots?ColorManager.darkGrey:ColorManager.darkGrey.withOpacity(0.5),
+                                      color: index==indexDots?ColorManager.black:ColorManager.black.withOpacity(0.5),
                                     ),
                                   );
                                 }),
@@ -91,8 +91,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       child: index==2?Container(
                         child: TextButton(
                           onPressed: (){
-                          Navigator.pushReplacementNamed(context, Routes.mainRoute);
-                        }, child: Text("Get Started",style: getBoldStyle(color: ColorManager.primary,fontSize: AppSize.s16),),)
+                          Navigator.pushReplacementNamed(context, Routes.loginRoute);
+                        }, child: Text(AppStrings.getStarted,style: getBoldStyle(color: ColorManager.primary,fontSize: AppSize.s16),),)
                       ):Container(),
                     )
                  ],
@@ -107,15 +107,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 }
 
 
-// class OnBoardingPage extends StatelessWidget {
-//   const OnBoardingPage({super.key, required this.image, required this.text});
-//   final String image,text;
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return 
-//   }
-// }
 
 
 
