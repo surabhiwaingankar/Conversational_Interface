@@ -15,11 +15,13 @@ class AppStrings {
   static const String password="Password";
   static const String fpassword=" Forgot Password ?";
   static const String cpassword=" Confirm Password";
-  static const String create="Create an \naccount";
+  static const String create="Create an account";
+  static const String createtitle="Create an \naccount";
   static const String createAccount="Create Account";
   static const String terms="By clicking the Register button, you agree to the public offer";
-
-
+  static const String signUp="Sign Up";
+  static const String already="Already have an account?"; 
+  static const String or="-Or Continue with Google-";
   static const String prodDetails = "Product Details";
   static const String buy = "Buy Now";
   static const String addcart = "Add to Cart";

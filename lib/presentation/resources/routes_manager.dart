@@ -4,6 +4,7 @@ import 'package:conversational_interface/screens/login.dart';
 import 'package:conversational_interface/screens/mainpage.dart';
 import 'package:conversational_interface/screens/onboarding.dart';
 import 'package:conversational_interface/screens/productdetails.dart';
+import 'package:conversational_interface/screens/register_screen.dart';
 import 'package:conversational_interface/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,7 @@ class Routes {
   static const String homeRoute = '/home';
   static const String loginRoute = '/login';
   static const String productDetailsRoute = '/productdetails';
+  static const String registerRoute = '/register';
 }
 
 class RouteGenerator {
@@ -29,6 +31,8 @@ class RouteGenerator {
       //   return MaterialPageRoute(builder: (_) => HomeScreen());
       case Routes.loginRoute:
         return MaterialPageRoute(builder: (_) => LoginScreen());
+      case Routes.registerRoute:
+        return MaterialPageRoute(builder: (_) => RegisterScreen());
       // case Routes.productDetailsRoute:
       //   return MaterialPageRoute(builder: (_) => ProductDetails());
       default:
