@@ -15,7 +15,7 @@ class WishlistScreen extends StatefulWidget {
 class _WishlistScreenState extends State<WishlistScreen> {
   int wishlistItemsno = 52000;
   final productThumbnail =
-      'https://i5.walmartimages.com/asr/183322b2-091b-43e2-88ac-c90360734501.c4514ecc06c6e8b7635f3eafb5a7dbdd.jpeg';
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/107710/03/sv01/fnd/IND/fmt/png/FUTURE-7-Pro-Cage-Men's-Football-Shoes";
   final productTitle = "Product Title";
   final productCategory = "Product Category";
   final productDescription = "Product Description";

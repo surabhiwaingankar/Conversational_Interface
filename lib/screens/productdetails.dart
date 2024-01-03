@@ -35,6 +35,7 @@ class ProductDetails extends StatefulWidget {
 }
 
 class _ProductDetailsState extends State<ProductDetails> {
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,17 +55,48 @@ class _ProductDetailsState extends State<ProductDetails> {
                       color: ColorManager.lightGrey,
                       borderRadius: BorderRadius.circular(10)),
                   width: MediaQuery.of(context).size.width,
-                  child: CarouselSlider(items: [
-                    Image(
-                      image: NetworkImage(widget.image1),
+                  child: CarouselSlider(
+                    items: [
+                      Image(
+                        image: NetworkImage(widget.image1),
+                      ),
+                      Image(
+                        image: NetworkImage(widget.image2),
+                      ),
+                      Image(
+                        image: NetworkImage(widget.image3),
+                      ),
+                    ],
+                    options: CarouselOptions(
+                      autoPlay: true,
+                      viewportFraction: 1,
+                      onPageChanged: ((index, reason) {
+                        setState(() {
+                          currentIndex = index;
+                        });
+                      }),
                     ),
-                    Image(
-                      image: NetworkImage(widget.image2),
-                    ),
-                    Image(
-                      image: NetworkImage(widget.image3),
-                    ),
-                  ], options: CarouselOptions(viewportFraction: 1)),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    for (int i = 0; i < 3; i++)
+                      Container(
+                        height: 10,
+                        width: 10,
+                        margin: const EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(color: ColorManager.grey, blurRadius: 2)
+                          ],
+                          shape: BoxShape.circle,
+                          color: (currentIndex == i)
+                              ? ColorManager.primary
+                              : ColorManager.white,
+                        ),
+                      )
+                  ],
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: AppPadding.p8),
