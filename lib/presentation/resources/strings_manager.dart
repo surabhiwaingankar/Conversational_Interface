@@ -10,6 +10,7 @@ class AppStrings{
   static const String welcome ="Welcome\nBack !";
   static const String email = "Enter your email";
   static const String password="Password";
+  static const String fpassword=" Forgot Password ?";
   static const String cpassword=" Confirm Password";
   static const String create="Create an \naccount";
   static const String createAccount="Create Account";
