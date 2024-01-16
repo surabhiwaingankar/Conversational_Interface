@@ -18,6 +18,7 @@ class ProductDetails extends StatefulWidget {
   final int productPrice;
   final int noOfRatings;
   final double rating;
+  final String productDetails;
   const ProductDetails(
       {super.key,
       required this.image1,
@@ -28,7 +29,8 @@ class ProductDetails extends StatefulWidget {
       required this.productDescription,
       required this.productPrice,
       required this.rating,
-      required this.noOfRatings});
+      required this.noOfRatings,
+      required this.productDetails});
 
   @override
   State<ProductDetails> createState() => _ProductDetailsState();
@@ -164,7 +166,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                 Padding(
                   padding: const EdgeInsets.only(top: AppPadding.p8),
                   child: ReadMoreText(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi cras fermentum odio eu feugiat pretium. Faucibus interdum posuere lorem ipsum dolor sit amet consectetur adipiscing. Porta non pulvinar neque laoreet suspendisse. Suspendisse interdum consectetur libero id faucibus nisl. Scelerisque in dictum non consectetur a. Gravida rutrum quisque non tellus orci ac. Non blandit massa enim nec.",
+                    widget.productDetails,
                     numLines: 4,
                     readLessText: 'Read Less',
                     readMoreText: 'Read More',
@@ -177,60 +179,66 @@ class _ProductDetailsState extends State<ProductDetails> {
                 ),
                 Row(
                   children: [
-                    MaterialButton(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      onPressed: () {},
-                      color: Colors.blue,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.shopping_cart_outlined,
-                              color: ColorManager.white,
-                            ),
-                            const SizedBox(
-                              width: 8,
-                            ),
-                            Text(
-                              AppStrings.addcart,
-                              style: getMediumStyle(
+                    Padding(
+                      padding: const EdgeInsets.only(right: 4.0),
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width / 2 - 25,
+                        child: MaterialButton(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          onPressed: () {},
+                          color: Colors.blue,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.shopping_cart_outlined,
                                   color: ColorManager.white,
-                                  fontSize: FontSize.s16),
-                            )
-                          ],
+                                ),
+                                const SizedBox(
+                                  width: 8,
+                                ),
+                                Text(
+                                  AppStrings.addcart,
+                                  style: getMediumStyle(
+                                      color: ColorManager.white,
+                                      fontSize: FontSize.s16),
+                                )
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      width: 8,
-                    ),
-                    MaterialButton(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      onPressed: () {},
-                      color: Colors.green,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.ads_click,
-                              color: ColorManager.white,
-                            ),
-                            const SizedBox(
-                              width: 8,
-                            ),
-                            Text(
-                              AppStrings.buy,
-                              style: getMediumStyle(
-                                  color: ColorManager.white,
-                                  fontSize: FontSize.s16),
-                            )
-                          ],
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 2 - 25,
+                      child: MaterialButton(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        onPressed: () {},
+                        color: Colors.green,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.ads_click,
+                                color: ColorManager.white,
+                              ),
+                              const SizedBox(
+                                width: 8,
+                              ),
+                              Text(
+                                AppStrings.buy,
+                                style: getMediumStyle(
+                                    color: ColorManager.white,
+                                    fontSize: FontSize.s16),
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     )
@@ -248,10 +256,12 @@ class _ProductDetailsState extends State<ProductDetails> {
                 const SizedBox(
                   width: 8,
                 ),
-                Wrap(
-                  direction: Axis.horizontal,
-                  children: [
-                    ProductItemCard(
+                SizedBox(
+                  height: 320,
+                  child: ListView.builder(
+                    itemCount: 10,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) => ProductItemCard(
                       productThumbnail: widget.image1,
                       productCategory: widget.productCategory,
                       productDescription: widget.productDescription,
@@ -260,53 +270,25 @@ class _ProductDetailsState extends State<ProductDetails> {
                       rating: widget.rating,
                       noOfRatings: widget.noOfRatings,
                     ),
-                    ProductItemCard(
-                      productThumbnail: widget.image1,
-                      productCategory: widget.productCategory,
-                      productDescription: widget.productDescription,
-                      productTitle: widget.productTitle,
-                      productPrice: widget.productPrice,
-                      rating: widget.rating,
-                      noOfRatings: widget.noOfRatings,
-                    ),
-                    ProductItemCard(
-                      productThumbnail: widget.image1,
-                      productCategory: widget.productCategory,
-                      productDescription: widget.productDescription,
-                      productTitle: widget.productTitle,
-                      productPrice: widget.productPrice,
-                      rating: widget.rating,
-                      noOfRatings: widget.noOfRatings,
-                    ),
-                    ProductItemCard(
-                      productThumbnail: widget.image1,
-                      productCategory: widget.productCategory,
-                      productDescription: widget.productDescription,
-                      productTitle: widget.productTitle,
-                      productPrice: widget.productPrice,
-                      rating: widget.rating,
-                      noOfRatings: widget.noOfRatings,
-                    ),
-                    ProductItemCard(
-                      productThumbnail: widget.image1,
-                      productCategory: widget.productCategory,
-                      productDescription: widget.productDescription,
-                      productTitle: widget.productTitle,
-                      productPrice: widget.productPrice,
-                      rating: widget.rating,
-                      noOfRatings: widget.noOfRatings,
-                    ),
-                    ProductItemCard(
-                      productThumbnail: widget.image1,
-                      productCategory: widget.productCategory,
-                      productDescription: widget.productDescription,
-                      productTitle: widget.productTitle,
-                      productPrice: widget.productPrice,
-                      rating: widget.rating,
-                      noOfRatings: widget.noOfRatings,
-                    ),
-                  ],
-                )
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: AppPadding.p16),
+                  child: Text(
+                    "Reviews",
+                    style: getBoldStyle(
+                        color: Colors.black, fontSize: AppPadding.p20),
+                  ),
+                ),
+                ReviewItem(
+                    imageUrl:
+                        "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png",
+                    reviewerName: 'John',
+                    reviewDescription:
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
               ],
             ),
           ),
